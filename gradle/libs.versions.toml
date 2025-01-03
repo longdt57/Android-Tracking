@@ -29,7 +29,6 @@ googleService = "4.4.2"
 crashlytic = "3.0.2"
 safeargs = "2.8.5"
 coroutines = "1.8.1"
-kover = "0.9.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -87,4 +86,3 @@ google-service = { id = "com.google.gms.google-services", version.ref = "googleS
 firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "crashlytic" }
 navigation-safeargs = { id = "androidx.navigation.safeargs", version.ref = "safeargs" }
 android-library = { id = "com.android.library", version.ref = "agp" }
-kotlinx-kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
