@@ -4,11 +4,5 @@
 
 ## Gradle Setup
 
-### Project/build.gradle.kts
-
-maven(url = "https://jitpack.io")
-
-### ModuleX/build.gradle.kts
-
-implementation("com.github.longdt57:Android-Tracking:{version}")
+https://jitpack.io/#longdt57/Android-Tracking
 
