@@ -3,41 +3,44 @@ package leegroup.module.analytics
 import leegroup.module.analytics.event.AnalyticsEvent
 
 interface Tracking {
-    val prefix: String
 
     fun track(event: AnalyticsEvent)
 
-    interface Launch : Tracking {
+    interface PrefixTracking : Tracking {
+        val prefix: String
+    }
+
+    interface Launch : PrefixTracking {
         fun launch() = track(
             AnalyticsEvent("${prefix}_LAUNCH")
         )
     }
 
-    interface BackClick : Tracking {
+    interface BackClick : PrefixTracking {
         fun clickBack() = track(
             AnalyticsEvent("${prefix}_CLICK_BACK")
         )
     }
 
-    interface CancelClick : Tracking {
+    interface CancelClick : PrefixTracking {
         fun clickCancel() = track(
             AnalyticsEvent("${prefix}_CLICK_CANCEL")
         )
     }
 
-    interface CloseClick : Tracking {
+    interface CloseClick : PrefixTracking {
         fun clickClose() = track(
             AnalyticsEvent("${prefix}_CLICK_CLOSE")
         )
     }
 
-    interface SaveClick : Tracking {
+    interface SaveClick : PrefixTracking {
         fun clickSave() = track(
             AnalyticsEvent("${prefix}_CLICK_SAVE")
         )
     }
 
-    interface Close : Tracking {
+    interface Close : PrefixTracking {
         fun close() = track(
             AnalyticsEvent("${prefix}_CLOSE")
         )
