@@ -1,10 +1,16 @@
 package com.app.androidcompose.tracking
 
-import javax.inject.Inject
 import leegroup.module.analytics.AnalyticsManager
+import leegroup.module.analytics.Tracking
+import leegroup.module.analytics.event.AnalyticsEvent
+import javax.inject.Inject
 
 class HomeTracking @Inject constructor(
-    override val analyticsManager: AnalyticsManager
-) : Launch {
+    private val analyticsManager: AnalyticsManager
+) : Tracking.Launch {
     override val prefix: String get() = "HOME"
+
+    override fun track(event: AnalyticsEvent) {
+        analyticsManager.logEvent(event)
+    }
 }
